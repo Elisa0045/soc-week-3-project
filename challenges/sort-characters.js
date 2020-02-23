@@ -1,5 +1,5 @@
-console.log('-- load & test sortCharacters --');
-debugger; // step through loading & testing
+console.log("-- load & test sortCharacters --");
+//debugger; // step through loading & testing
 
 /* sort the characters in a string
   each character in a javascript string has a "charCode" number
@@ -9,18 +9,22 @@ debugger; // step through loading & testing
   to sort strings you rearrange the characters in charCode order
 */
 function sortCharacters(str) {
-
+  debugger;
+  let step1 = str.split("");
+  let step2 = step1.sort();
+  let step3 = step2.join("");
+  return step3;
 }
 
 // declare and evaluate test cases for sortCharacters
 const sortCharactersTests = [
-  { name: 'Test 1', args: ['fedcba'], expected: 'abcdef' },
-  { name: 'Test 2', args: ['54321'], expected: '12345' },
-  { name: 'Test 3', args: [''], expected: '' },
-  { name: 'Test 4', args: ['aAbBcC'], expected: 'ABCabc' },
-  { name: 'Test 5', args: [';:,.'], expected: ',.:;' },
-  { name: 'Test 6', args: ['a1b2c3'], expected: '123abc' },
-  { name: 'Test 7', args: ['Walk fast.'], expected: ' .Waafklst' },
+  { name: "Test 1", args: ["fedcba"], expected: "abcdef" },
+  { name: "Test 2", args: ["54321"], expected: "12345" },
+  { name: "Test 3", args: [""], expected: "" },
+  { name: "Test 4", args: ["aAbBcC"], expected: "ABCabc" },
+  { name: "Test 5", args: [";:,."], expected: ",.:;" },
+  { name: "Test 6", args: ["a1b2c3"], expected: "123abc" },
+  { name: "Test 7", args: ["Walk fast."], expected: " .Waafklst" }
 ];
 for (let test of sortCharactersTests) {
   const expected = test.expected;
@@ -28,34 +32,34 @@ for (let test of sortCharactersTests) {
   const passing = actual === expected;
   console.assert(passing, test.name);
   test.actual = actual;
-};
+}
 console.log(sortCharactersTests);
-
 
 // declare handler
 function sortCharactersHandler() {
-  debugger; // step through user actions
+  //debugger; // step through user actions
 
   // read & process user input
-
+  const text = prompt("enter a text");
 
   // execute core logic
-
+  const result = sortCharacters(text);
 
   // display result to user
-
+  alert(result);
 
   // log action for developer
-  console.log('\n-- sortCharacters --');
+  console.log("\n-- sortCharacters --");
   // user inputs
+  console.log("\n-- " + text + " --");
   // result
+  console.log("\n-- " + result + " --");
 }
 
 // attach handler to sortCharacters button with an event listener
-document.getElementById('sortCharacters-button').addEventListener('click', sortCharactersHandler);
-
-
-
+document
+  .getElementById("sortCharacters-button")
+  .addEventListener("click", sortCharactersHandler);
 
 /* looking for a hint?
   try solving the challenge in 3 steps:
